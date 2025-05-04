@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
+import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 interface User {
   id?: string;
@@ -55,7 +55,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   };
 
   // Check for existing session on mount
-  useEffect(() => {
+  React.useEffect(() => {
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
       try {
